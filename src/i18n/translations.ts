@@ -1,6 +1,48 @@
 export type Lang = "it" | "en";
 
-export const translations = {
+type Translation = {
+  nav: { home: string; about: string; experience: string; portfolio: string; contact: string };
+  hero: { eyebrow: string; title: string; subtitle: string; cta1: string; cta2: string };
+  home: {
+    highlightsTitle: string;
+    h1Title: string; h1Desc: string;
+    h2Title: string; h2Desc: string;
+    h3Title: string; h3Desc: string;
+    h4Title: string; h4Desc: string;
+    ctaTitle: string; ctaDesc: string; ctaBtn: string;
+  };
+  about: {
+    title: string; lead: string; p1: string; p2: string;
+    skillsTitle: string;
+    skills: {
+      bi: string; biList: string[];
+      tech: string; techList: string[];
+      pm: string; pmList: string[];
+      soft: string; softList: string[];
+    };
+    langTitle: string; langs: string[];
+  };
+  experience: {
+    title: string; subtitle: string;
+    jobs: { role: string; company: string; period: string; bullets: string[] }[];
+    eduTitle: string;
+    edu: { title: string; org: string; year: string }[];
+  };
+  portfolio: {
+    title: string; subtitle: string; note: string;
+    projects: { tag: string; title: string; desc: string }[];
+  };
+  contact: {
+    title: string; subtitle: string;
+    emailLabel: string; phoneLabel: string; locationLabel: string; location: string;
+    downloadCv: string;
+  };
+  footer: string;
+};
+
+export type TranslationKeys = Translation;
+
+export const translations: Record<Lang, Translation> = {
   it: {
     nav: { home: "Home", about: "Chi sono", experience: "Esperienze", portfolio: "Portfolio", contact: "Contatti" },
     hero: {
@@ -175,6 +217,4 @@ export const translations = {
     },
     footer: "© 2026 Eleni Kokologianni. All rights reserved.",
   },
-} as const;
-
-export type TranslationKeys = typeof translations.it;
+};
