@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useLang } from "@/i18n/LanguageContext";
-import portrait from "@/assets/eleni-portrait.jpg";
+import portrait from "@/assets/eleni-portrait.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

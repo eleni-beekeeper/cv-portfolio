@@ -43,7 +43,7 @@ function Contact() {
         <a href="/CV-Eleni-Kokologianni.pdf" download className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors shadow-soft">
           <Download className="w-4 h-4" /> {t.contact.downloadCv}
         </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 border border-border px-7 py-3 rounded-full text-sm font-medium hover:bg-secondary transition-colors">
+        <a href="https://www.linkedin.com/in/eleni-kokologianni-29011989/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 border border-border px-7 py-3 rounded-full text-sm font-medium hover:bg-secondary transition-colors">
           <Linkedin className="w-4 h-4" /> LinkedIn
         </a>
       </div>
