@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/i18n/LanguageContext";
-import portrait from "@/assets/eleni-portrait.jpg";
+import portrait from "@/assets/eleni-portrait.png";
 import { ArrowRight, Download, Briefcase, BarChart3, ShoppingBag, Workflow } from "lucide-react";
 
 export const Route = createFileRoute("/")({

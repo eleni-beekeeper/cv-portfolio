@@ -1,5 +1,14 @@
 export type Lang = "it" | "en";
 
+export type PortfolioProject = {
+  tag: string;
+  title: string;
+  client?: string;
+  desc: string;
+  milestones?: string[];
+  results?: string[];
+};
+
 type Translation = {
   nav: { home: string; about: string; experience: string; portfolio: string; contact: string };
   hero: { eyebrow: string; title: string; subtitle: string; cta1: string; cta2: string };
@@ -20,7 +29,10 @@ type Translation = {
       pm: string; pmList: string[];
       soft: string; softList: string[];
     };
-    langTitle: string; langs: string[];
+    langTitle: string;
+    langs: { name: string; level: string }[];
+    extraTitle: string;
+    extra: string[];
   };
   experience: {
     title: string; subtitle: string;
@@ -30,7 +42,10 @@ type Translation = {
   };
   portfolio: {
     title: string; subtitle: string; note: string;
-    projects: { tag: string; title: string; desc: string }[];
+    clientLabel: string; milestonesLabel: string; resultsLabel: string;
+    groupsTitle: string;
+    groups: { id: string; label: string }[];
+    projects: (PortfolioProject & { group: string })[];
   };
   contact: {
     title: string; subtitle: string;
@@ -83,7 +98,14 @@ export const translations: Record<Lang, Translation> = {
         softList: ["Comunicazione & gestione cliente", "Gestione di progetti multipli", "Risk management", "Collaborazione & knowledge sharing"],
       },
       langTitle: "Lingue",
-      langs: ["Italiano (fluente)", "Inglese (professionale)", "Greco (madrelingua)"],
+      langs: [
+        { name: "Italiano", level: "C2" },
+        { name: "Inglese", level: "C2" },
+        { name: "Greco", level: "Madrelingua" },
+        { name: "Francese", level: "A2" },
+      ],
+      extraTitle: "Info aggiuntive",
+      extra: ["Patente B — automunita", "Disponibile a trasferte", "Sede Padova, aperta a remote/hybrid"],
     },
     experience: {
       title: "Percorso professionale",
@@ -108,20 +130,113 @@ export const translations: Record<Lang, Translation> = {
     },
     portfolio: {
       title: "Portfolio progetti",
-      subtitle: "Una selezione di progetti raggruppati per tipo di valore portato. Dettagli specifici e numeri condivisi su richiesta nel rispetto degli NDA.",
-      note: "Le descrizioni sono volutamente generiche per riservatezza. Posso approfondire ogni caso in colloquio.",
+      subtitle: "Una selezione di progetti raggruppati per tipo di valore portato, con milestone e risultati misurabili.",
+      note: "Alcuni dati sono aggregati o arrotondati nel rispetto degli NDA. Approfondisco volentieri ogni caso in colloquio.",
+      clientLabel: "Cliente",
+      milestonesLabel: "Milestone",
+      resultsLabel: "Risultati",
+      groupsTitle: "Aree di valore",
+      groups: [
+        { id: "ecommerce", label: "Ecommerce Specialist" },
+        { id: "pm", label: "Project Management" },
+        { id: "integration", label: "System Integration" },
+      ],
       projects: [
-        { tag: "Ecommerce", title: "Ottimizzazione performance ecommerce fashion", desc: "Analisi continuativa di KPI di vendita, conversion e merchandising online per brand del settore fashion. Definizione di azioni correttive sul catalogo e supporto al Piano Commerciale annuale." },
-        { tag: "Integrazione sistemi", title: "Integrazione ERP ↔ CMS ↔ marketplace", desc: "Coordinamento progetti di integrazione tra sistemi gestionali, piattaforme ecommerce e marketplace di terze parti. Raccolta requisiti, mappatura flussi dati, gestione UAT." },
-        { tag: "Project Management", title: "Coordinamento go-live ecommerce multi-brand", desc: "Gestione end-to-end di go-live di nuove istanze ecommerce, dal kick-off al post-lancio. Coordinamento di team tech, marketing e business con SAL settimanali." },
-        { tag: "Business Analysis", title: "Mappatura processi & change request", desc: "Analisi as-is dei processi ecommerce, definizione to-be, redazione di documentazione funzionale e gestione del backlog di change request lato cliente." },
-        { tag: "Data & Reporting", title: "Dashboarding KPI ecommerce in Qlik Sense", desc: "Costruzione e manutenzione di dashboard operative per il monitoraggio quotidiano di ordini, resi e performance di catalogo. Storytelling dei dati per stakeholder business." },
-        { tag: "B2B Ecommerce", title: "Avvio canale ecommerce B2B", desc: "Responsabilità diretta sul canale ecommerce B2B di un'azienda manifatturiera: gestione catalogo, ottimizzazione qualità dati, riduzione reclami e coordinamento agenzia web." },
+        {
+          group: "ecommerce",
+          tag: "Ecommerce B2B",
+          title: "Gestione ecommerce B2B multibrand",
+          client: "Z Group Srl",
+          desc: "Responsabilità diretta del canale ecommerce B2B multibrand: catalogo, qualità dati, coordinamento agenzia web e software house, gestione corrieri e fatturazione.",
+          milestones: ["Riorganizzazione del catalogo e dei flussi dati", "Coordinamento agenzia web e software house", "Ottimizzazione processo ordine → spedizione → fatturazione"],
+          results: ["+2% traffico", "+10% ordini", "−10% reclami", "−30% errori catalogo"],
+        },
+        {
+          group: "ecommerce",
+          tag: "Ecommerce B2C",
+          title: "Gestione ecommerce DTC clienti beauty",
+          client: "Collistar, BioNike",
+          desc: "Gestione store online su Magento, Shopify e PrestaShop. Analisi KPI con Qlik Sense e GA4, ottimizzazione performance, coordinamento attività promo, lanci e merchandising. Analisi dati anche per riassortimenti magazzino.",
+          milestones: ["Analisi KPI continuativa (Qlik, GA4)", "Coordinamento promo, lanci e merchandising online", "Riassortimenti data-driven per evitare out of stock"],
+          results: ["+2% conversion rate", "−1% resi", "−20% errori stock", "Out of stock azzerati sui best seller"],
+        },
+        {
+          group: "pm",
+          tag: "Project Management",
+          title: "Nuovo ecommerce su Shopify",
+          client: "Umit Benan",
+          desc: "Creazione progetto ecommerce su Shopify con go-live in 3 mesi, gestione delle change request in corso d'opera ed erogazione del pacchetto di maintenance post-lancio.",
+          milestones: ["Kick-off & raccolta requisiti", "Build, UAT e go-live in 3 mesi", "Gestione change request", "Erogazione pacchetto maintenance"],
+          results: ["Delivery on time entro 3 mesi", "Continuità operativa post go-live"],
+        },
+        {
+          group: "pm",
+          tag: "Project Management",
+          title: "Customer service & loyalty program",
+          client: "Antony Morato",
+          desc: "Integrazione widget customer service in produzione. Partecipazione alla fase presales per implementazione loyalty program online e reso in store con tool fornitore FiloBlu, coordinando team tech interno + 3 fornitori (CRM, sistemi cassa store, FiloBlu).",
+          milestones: ["Integrazione widget customer service in produzione", "Presales loyalty program online & reso in store", "Coordinamento team tech interno + 3 fornitori"],
+          results: ["Roadmap omnichannel allineata tra brand e fornitori", "Requisiti tecnici e funzionali consolidati per la fase di build"],
+        },
+        {
+          group: "pm",
+          tag: "Project Management",
+          title: "Marketing tool & integrazione CRM",
+          client: "Pal Zileri",
+          desc: "Integrazione del marketing tool SaleCycle. Partecipazione presales per integrazione Magento ↔ Microsoft Dynamics (nuovo CRM, migrazione dati e flusso da Magento verso CRM).",
+          milestones: ["Integrazione SaleCycle in produzione", "Presales Magento ↔ Microsoft Dynamics", "Disegno flusso dati e migrazione verso il nuovo CRM"],
+          results: ["Marketing tool live e tracciato", "Architettura dati cliente-CRM definita end-to-end"],
+        },
+        {
+          group: "integration",
+          tag: "Marketplace",
+          title: "Apertura store Zalando",
+          client: "Loriblu",
+          desc: "Apertura store Zalando con integrazione marketplace tramite Cloudstore, ERP e WMS aziendali e corrieri (GSPED).",
+          milestones: ["Setup connettore Cloudstore ↔ Zalando", "Integrazione ERP + WMS", "Integrazione corrieri via GSPED", "Go-live store"],
+          results: ["Nuovo canale di vendita attivo", "Flusso ordini → magazzino → spedizione automatizzato"],
+        },
+        {
+          group: "integration",
+          tag: "Marketplace",
+          title: "Attivazione store Amazon",
+          client: "Frau",
+          desc: "Attivazione store Amazon: integrazione catalogo, gestione listini e flussi ordini/spedizioni con i sistemi del cliente.",
+          milestones: ["Onboarding Amazon", "Integrazione catalogo & listini", "Sincronizzazione ordini e spedizioni"],
+          results: ["Store Amazon live", "Processo ordine end-to-end automatizzato"],
+        },
+        {
+          group: "integration",
+          tag: "Marketplace",
+          title: "Attivazione store Decathlon",
+          client: "Altra Running",
+          desc: "Attivazione del canale Decathlon Marketplace, integrazione catalogo e gestione del flusso operativo con i sistemi del cliente.",
+          milestones: ["Onboarding Decathlon", "Integrazione catalogo", "Setup flusso ordini e logistico"],
+          results: ["Nuovo canale marketplace attivo", "Espansione del go-to-market del brand"],
+        },
+        {
+          group: "integration",
+          tag: "Migrazione",
+          title: "Migrazione ecommerce & magazzini logici",
+          client: "Progetto interno",
+          desc: "Migrazione ecommerce e magazzini logici tra società del gruppo con infrastrutture diverse: passaggio da SAP a NetSuite, riallineamento di flussi e mapping.",
+          milestones: ["Mapping dati SAP → NetSuite", "Migrazione magazzini logici", "Switch ecommerce sulla nuova infrastruttura", "Hypercare post go-live"],
+          results: ["Migrazione completata senza interruzioni significative del servizio", "Allineamento operativo cross-società"],
+        },
+        {
+          group: "integration",
+          tag: "Omnichannel",
+          title: "Servizio Pickup in Store",
+          client: "Borbonese",
+          desc: "Attivazione del servizio Pickup in Store: integrazione ecommerce ↔ sistemi di store ↔ logistica per consentire il ritiro dell'ordine in negozio.",
+          milestones: ["Disegno flusso omnichannel", "Integrazione ecommerce ↔ store ↔ logistica", "Test e rollout sui punti vendita"],
+          results: ["Nuova opzione di delivery attiva", "Maggiore integrazione tra canale online e rete retail"],
+        },
       ],
     },
     contact: {
       title: "Lavoriamo insieme",
-      subtitle: "Aperta a opportunità come Project Manager, Business Analyst, Ecommerce Specialist e SaaS Consultant. Sede Padova, disponibile a remote/hybrid.",
+      subtitle: "Aperta a opportunità come Project Manager, Business Analyst, Ecommerce Specialist e SaaS Consultant. Sede Padova, disponibile a remote/hybrid. Patente B, automunita.",
       emailLabel: "Email",
       phoneLabel: "Telefono",
       locationLabel: "Sede",
@@ -170,7 +285,14 @@ export const translations: Record<Lang, Translation> = {
         softList: ["Communication & client management", "Multi-project management", "Risk management", "Collaboration & knowledge sharing"],
       },
       langTitle: "Languages",
-      langs: ["Italian (fluent)", "English (professional)", "Greek (native)"],
+      langs: [
+        { name: "Italian", level: "C2" },
+        { name: "English", level: "C2" },
+        { name: "Greek", level: "Native" },
+        { name: "French", level: "A2" },
+      ],
+      extraTitle: "Additional info",
+      extra: ["Driving licence B — own car", "Available to travel", "Based in Padua, open to remote/hybrid"],
     },
     experience: {
       title: "Career path",
@@ -195,20 +317,113 @@ export const translations: Record<Lang, Translation> = {
     },
     portfolio: {
       title: "Project portfolio",
-      subtitle: "A selection of projects grouped by type of value delivered. Specific details and numbers shared on request, respecting NDAs.",
-      note: "Descriptions are intentionally generic for confidentiality. Happy to go deeper in an interview.",
+      subtitle: "A selection of projects grouped by type of value delivered, with milestones and measurable results.",
+      note: "Some figures are aggregated or rounded out of respect for NDAs. Happy to go deeper in an interview.",
+      clientLabel: "Client",
+      milestonesLabel: "Milestones",
+      resultsLabel: "Results",
+      groupsTitle: "Value areas",
+      groups: [
+        { id: "ecommerce", label: "Ecommerce Specialist" },
+        { id: "pm", label: "Project Management" },
+        { id: "integration", label: "System Integration" },
+      ],
       projects: [
-        { tag: "Ecommerce", title: "Fashion ecommerce performance optimization", desc: "Continuous analysis of sales, conversion and online merchandising KPIs for fashion brands. Definition of corrective actions on the catalog and support to the annual Commercial Plan." },
-        { tag: "System integration", title: "ERP ↔ CMS ↔ marketplace integration", desc: "Coordination of integration projects between ERP systems, ecommerce platforms and third-party marketplaces. Requirements gathering, data flow mapping, UAT management." },
-        { tag: "Project Management", title: "Multi-brand ecommerce go-live coordination", desc: "End-to-end management of new ecommerce instance go-lives, from kick-off to post-launch. Coordination of tech, marketing and business teams with weekly status meetings." },
-        { tag: "Business Analysis", title: "Process mapping & change requests", desc: "As-is analysis of ecommerce processes, to-be definition, functional documentation and management of the client-side change request backlog." },
-        { tag: "Data & Reporting", title: "Ecommerce KPI dashboarding in Qlik Sense", desc: "Built and maintained operational dashboards for daily monitoring of orders, returns and catalog performance. Data storytelling for business stakeholders." },
-        { tag: "B2B Ecommerce", title: "B2B ecommerce channel launch", desc: "Direct ownership of the B2B ecommerce channel of a manufacturing company: catalog management, data quality optimization, complaint reduction and web agency coordination." },
+        {
+          group: "ecommerce",
+          tag: "B2B Ecommerce",
+          title: "Multi-brand B2B ecommerce management",
+          client: "Z Group Srl",
+          desc: "Direct ownership of the multi-brand B2B ecommerce channel: catalog, data quality, coordination of web agency and software house, carrier and invoicing management.",
+          milestones: ["Catalog and data flow reorganization", "Web agency and software house coordination", "Order → shipping → invoicing process optimization"],
+          results: ["+2% traffic", "+10% orders", "−10% complaints", "−30% catalog errors"],
+        },
+        {
+          group: "ecommerce",
+          tag: "B2C Ecommerce",
+          title: "DTC ecommerce management for beauty clients",
+          client: "Collistar, BioNike",
+          desc: "Online store management on Magento, Shopify and PrestaShop. KPI analysis (Qlik Sense, GA4) and performance optimization. Coordination of promo, launches and merchandising. Data analysis also driving warehouse replenishment.",
+          milestones: ["Continuous KPI analysis (Qlik, GA4)", "Online promo, launch and merchandising coordination", "Data-driven replenishment to avoid out-of-stock"],
+          results: ["+2% conversion rate", "−1% returns", "−20% stock errors", "Zero out-of-stock on best sellers"],
+        },
+        {
+          group: "pm",
+          tag: "Project Management",
+          title: "New Shopify ecommerce",
+          client: "Umit Benan",
+          desc: "Creation of a Shopify ecommerce project with go-live in 3 months, in-flight change request management and delivery of the post-launch maintenance package.",
+          milestones: ["Kick-off & requirements gathering", "Build, UAT and go-live in 3 months", "Change request management", "Maintenance package delivery"],
+          results: ["On-time delivery within 3 months", "Operational continuity after go-live"],
+        },
+        {
+          group: "pm",
+          tag: "Project Management",
+          title: "Customer service & loyalty program",
+          client: "Antony Morato",
+          desc: "Customer service widget integration in production. Pre-sales for online loyalty program and in-store returns using FiloBlu's tool, coordinating internal tech team plus three vendors (CRM, in-store POS, FiloBlu).",
+          milestones: ["Customer service widget live in production", "Pre-sales for online loyalty program & in-store returns", "Coordination of internal tech team + 3 vendors"],
+          results: ["Omnichannel roadmap aligned across brand and vendors", "Technical and functional requirements consolidated for the build phase"],
+        },
+        {
+          group: "pm",
+          tag: "Project Management",
+          title: "Marketing tool & CRM integration",
+          client: "Pal Zileri",
+          desc: "Integration of SaleCycle marketing tool. Pre-sales for Magento ↔ Microsoft Dynamics integration (new CRM, data migration and flow from Magento to CRM).",
+          milestones: ["SaleCycle integration in production", "Pre-sales Magento ↔ Microsoft Dynamics", "Data flow design and migration to the new CRM"],
+          results: ["Marketing tool live and tracked", "End-to-end client-CRM data architecture defined"],
+        },
+        {
+          group: "integration",
+          tag: "Marketplace",
+          title: "Zalando store launch",
+          client: "Loriblu",
+          desc: "Launch of the Zalando store with marketplace integration via Cloudstore, ERP and WMS systems and carriers (GSPED).",
+          milestones: ["Cloudstore ↔ Zalando connector setup", "ERP + WMS integration", "Carrier integration via GSPED", "Store go-live"],
+          results: ["New sales channel live", "Order → warehouse → shipping flow fully automated"],
+        },
+        {
+          group: "integration",
+          tag: "Marketplace",
+          title: "Amazon store activation",
+          client: "Frau",
+          desc: "Amazon store activation: catalog integration, price list management and order/shipping flows with the client's systems.",
+          milestones: ["Amazon onboarding", "Catalog & price list integration", "Order and shipping synchronization"],
+          results: ["Amazon store live", "Fully automated end-to-end order process"],
+        },
+        {
+          group: "integration",
+          tag: "Marketplace",
+          title: "Decathlon store activation",
+          client: "Altra Running",
+          desc: "Activation of the Decathlon Marketplace channel, catalog integration and operational flow with the client's systems.",
+          milestones: ["Decathlon onboarding", "Catalog integration", "Order and logistics flow setup"],
+          results: ["New marketplace channel live", "Brand go-to-market expansion"],
+        },
+        {
+          group: "integration",
+          tag: "Migration",
+          title: "Ecommerce & logical warehouses migration",
+          client: "Internal project",
+          desc: "Migration of ecommerce and logical warehouses across group companies with different infrastructures: from SAP to NetSuite, with flow and mapping realignment.",
+          milestones: ["SAP → NetSuite data mapping", "Logical warehouses migration", "Ecommerce switch to the new infrastructure", "Post go-live hypercare"],
+          results: ["Migration completed with no significant service disruption", "Cross-company operational alignment"],
+        },
+        {
+          group: "integration",
+          tag: "Omnichannel",
+          title: "Pickup in Store service",
+          client: "Borbonese",
+          desc: "Activation of the Pickup in Store service: ecommerce ↔ store systems ↔ logistics integration to enable in-store order pickup.",
+          milestones: ["Omnichannel flow design", "Ecommerce ↔ store ↔ logistics integration", "Test and rollout across stores"],
+          results: ["New delivery option live", "Tighter integration between online channel and retail network"],
+        },
       ],
     },
     contact: {
       title: "Let's work together",
-      subtitle: "Open to opportunities as Project Manager, Business Analyst, Ecommerce Specialist and SaaS Consultant. Based in Padua, available for remote/hybrid.",
+      subtitle: "Open to opportunities as Project Manager, Business Analyst, Ecommerce Specialist and SaaS Consultant. Based in Padua, available for remote/hybrid. Driving licence B, own car.",
       emailLabel: "Email",
       phoneLabel: "Phone",
       locationLabel: "Location",
