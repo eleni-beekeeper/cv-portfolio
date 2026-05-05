@@ -51,9 +51,19 @@ function About() {
       </div>
 
       <h2 className="font-display text-3xl md:text-4xl mb-6">{t.about.langTitle}</h2>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-3 mb-16">
         {t.about.langs.map((l) => (
-          <span key={l} className="px-5 py-2 bg-accent rounded-full text-sm text-accent-foreground">{l}</span>
+          <span key={l.name} className="px-5 py-2 bg-accent rounded-full text-sm text-accent-foreground">
+            <span className="font-medium">{l.name}</span>
+            <span className="text-muted-foreground"> · {l.level}</span>
+          </span>
+        ))}
+      </div>
+
+      <h2 className="font-display text-3xl md:text-4xl mb-6">{t.about.extraTitle}</h2>
+      <div className="flex flex-wrap gap-3">
+        {t.about.extra.map((e) => (
+          <span key={e} className="px-5 py-2 bg-card border border-border/60 rounded-full text-sm text-foreground shadow-card">{e}</span>
         ))}
       </div>
     </div>
