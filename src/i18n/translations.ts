@@ -83,7 +83,7 @@ export const translations: Record<Lang, Translation> = {
     },
     about: {
       title: "Chi sono",
-      lead: "Professionista con esperienza nella gestione end-to-end di progetti digitali ed ecommerce, con forte esposizione all'analisi dei KPI, integrazione sistemi e collaborazione tra team tecnici e business.",
+      lead: "Mi chiamo Eleni Kokologianni e sono una professionista con esperienza nella gestione end-to-end di progetti digitali ed ecommerce, con forte esposizione all'analisi dei KPI, integrazione sistemi e collaborazione tra team tecnici e business.",
       p1: "Ho sempre gestito il rapporto diretto con il cliente, raccogliendo requisiti, traducendo bisogni in soluzioni concrete e supportando decisioni data-driven. Sto orientando la mia crescita verso l'analisi dati e verso ruoli più consulenziali.",
       p2: "Mi descrivono come la persona che fa da ponte: capisco i tecnici quando parlano di API e i business owner quando parlano di margini. Questo mi rende efficace nei contesti dove il valore nasce dall'incontro tra reparti diversi e nelle attività di consulenza presales.",
       skillsTitle: "Competenze",
@@ -149,7 +149,7 @@ export const translations: Record<Lang, Translation> = {
           client: "Z Group Srl",
           desc: "Responsabilità diretta del canale ecommerce B2B multibrand: catalogo, qualità dati, coordinamento agenzia web e software house, gestione corrieri e fatturazione.",
           milestones: ["Riorganizzazione del catalogo e dei flussi dati", "Coordinamento agenzia web e software house", "Ottimizzazione processo ordine → spedizione → fatturazione"],
-          results: ["+2% traffico", "+10% ordini", "−10% reclami", "−30% errori catalogo"],
+          results: ["+10% ordini", "−10% reclami", "−30% errori catalogo"],
         },
         {
           group: "ecommerce",
@@ -261,7 +261,7 @@ export const translations: Record<Lang, Translation> = {
     },
     about: {
       title: "About me",
-      lead: "Professional with experience in end-to-end management of digital and ecommerce projects, with strong exposure to KPI analysis, system integration and collaboration between technical and business teams.",
+      lead: "My name is Eleni Kokologianni and I'm a professional with experience in end-to-end management of digital and ecommerce projects, with strong exposure to KPI analysis, system integration and collaboration between technical and business teams.",
       p1: "I've always managed direct client relationships, collecting requirements, translating needs into concrete solutions and supporting data-driven decisions. I'm growing my career toward data analysis and more consulting-oriented roles.",
       p2: "People describe me as the bridge person: I understand engineers when they talk about APIs and business owners when they talk about margins. That makes me effective wherever value comes from departments meeting in the middle and in presales consulting work.",
       skillsTitle: "Skills",
@@ -327,7 +327,7 @@ export const translations: Record<Lang, Translation> = {
           client: "Z Group Srl",
           desc: "Direct ownership of the multi-brand B2B ecommerce channel: catalog, data quality, coordination of web agency and software house, carrier and invoicing management.",
           milestones: ["Catalog and data flow reorganization", "Web agency and software house coordination", "Order → shipping → invoicing process optimization"],
-          results: ["+2% traffic", "+10% orders", "−10% complaints", "−30% catalog errors"],
+          results: ["+10% orders", "−10% complaints", "−30% catalog errors"],
         },
         {
           group: "ecommerce",
