@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/i18n/LanguageContext";
-import { Info, CheckCircle2, Flag, ArrowRight } from "lucide-react";
+import { CheckCircle2, Flag, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
