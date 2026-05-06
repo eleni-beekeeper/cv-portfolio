@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/i18n/LanguageContext";
+import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/experience")({
   head: () => ({
@@ -50,6 +51,14 @@ function Experience() {
             <span className="text-xs text-primary font-medium whitespace-nowrap mt-1">{e.year}</span>
           </div>
         ))}
+      </div>
+
+      <div className="mt-20 bg-gradient-warm rounded-3xl p-10 md:p-14 text-center shadow-soft">
+        <h2 className="font-display text-3xl md:text-4xl text-primary-foreground mb-4">{t.home.ctaTitle}</h2>
+        <p className="text-primary-foreground/85 max-w-2xl mx-auto mb-8">{t.home.ctaDesc}</p>
+        <Link to="/portfolio" className="inline-flex items-center gap-2 bg-background text-foreground px-7 py-3 rounded-full text-sm font-medium hover:bg-background/90 transition-colors">
+          {t.hero.cta1} <ArrowRight className="w-4 h-4" />
+        </Link>
       </div>
     </div>
   );
