@@ -395,7 +395,7 @@ export const translations: Record<Lang, Translation> = {
           client: "Internal project (GCDS store)",
           desc: "Switch of the system integration backing the GCDS ecommerce store across group companies with different infrastructures: from SAP to NetSuite, new logical warehouse, new carrier codes and integration update. The Shopify storefront stayed in place — only the integration backend changed.",
           milestones: ["SAP → NetSuite data mapping", "Logical warehouse migration", "New carrier codes & integration update", "Post go-live hypercare"],
-          results: ["Shopify storefront preserved without interruptions", "Backend switch completed with no significant disruption", "Cross-company operational alignment"],
+          results: ["Shopify storefront preserved without interruptions", "Backend risk and emergency management on a complex cross-company project", "Cross-company operational alignment"],
         },
         {
           group: "integration",
