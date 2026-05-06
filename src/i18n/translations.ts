@@ -316,6 +316,8 @@ export const translations: Record<Lang, Translation> = {
       clientLabel: "Client",
       milestonesLabel: "Milestones",
       resultsLabel: "Results",
+      clientsTitle: "Clients I've worked with",
+      clients: ["Z Group Srl", "Collistar", "BioNike", "Umit Benan", "Antony Morato", "Pal Zileri", "Loriblu", "Altra Running", "GCDS", "Borbonese"],
       groupsTitle: "Value areas",
       groups: [
         { id: "ecommerce", label: "Ecommerce Specialist" },
