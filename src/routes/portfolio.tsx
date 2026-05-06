@@ -26,6 +26,17 @@ function Portfolio() {
         <p className="text-sm text-accent-foreground">{t.portfolio.note}</p>
       </div>
 
+      <section className="mb-16 text-center border-y border-border/60 py-10">
+        <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-5">{t.portfolio.clientsTitle}</p>
+        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
+          {t.portfolio.clients.map((c, i) => (
+            <span key={i} className="font-display text-xl md:text-2xl text-foreground/80 hover:text-primary transition-colors">
+              {c}
+            </span>
+          ))}
+        </div>
+      </section>
+
       <div className="space-y-16">
         {t.portfolio.groups.map((g) => {
           const items = t.portfolio.projects.filter((p) => p.group === g.id);

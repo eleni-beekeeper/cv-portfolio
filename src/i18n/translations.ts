@@ -43,6 +43,7 @@ type Translation = {
   portfolio: {
     title: string; subtitle: string; note: string;
     clientLabel: string; milestonesLabel: string; resultsLabel: string;
+    clientsTitle: string; clients: string[];
     groupsTitle: string;
     groups: { id: string; label: string }[];
     projects: (PortfolioProject & { group: string })[];
@@ -135,6 +136,8 @@ export const translations: Record<Lang, Translation> = {
       clientLabel: "Cliente",
       milestonesLabel: "Milestone",
       resultsLabel: "Risultati",
+      clientsTitle: "Hanno lavorato con me",
+      clients: ["Z Group Srl", "Collistar", "BioNike", "Umit Benan", "Antony Morato", "Pal Zileri", "Loriblu", "Altra Running", "GCDS", "Borbonese"],
       groupsTitle: "Aree di valore",
       groups: [
         { id: "ecommerce", label: "Ecommerce Specialist" },
@@ -313,6 +316,8 @@ export const translations: Record<Lang, Translation> = {
       clientLabel: "Client",
       milestonesLabel: "Milestones",
       resultsLabel: "Results",
+      clientsTitle: "Clients I've worked with",
+      clients: ["Z Group Srl", "Collistar", "BioNike", "Umit Benan", "Antony Morato", "Pal Zileri", "Loriblu", "Altra Running", "GCDS", "Borbonese"],
       groupsTitle: "Value areas",
       groups: [
         { id: "ecommerce", label: "Ecommerce Specialist" },
