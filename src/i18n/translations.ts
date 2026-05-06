@@ -215,7 +215,7 @@ export const translations: Record<Lang, Translation> = {
           client: "Progetto interno (store GCDS)",
           desc: "Switch della system integration a supporto dello store ecommerce del cliente GCDS tra società del gruppo con infrastrutture diverse: passaggio da SAP a NetSuite, nuovo magazzino logico, nuovi codici corrieri e aggiornamento dell'integrazione. L'ecommerce è rimasto su Shopify: cambia solo il backend di integrazione.",
           milestones: ["Mapping dati SAP → NetSuite", "Migrazione magazzino logico", "Nuovi codici corrieri & update integrazione", "Hypercare post go-live"],
-          results: ["Shopify storefront mantenuto senza interruzioni", "Switch backend completato senza disservizi significativi", "Allineamento operativo cross-società"],
+          results: ["Shopify storefront mantenuto senza interruzioni", "Gestione del rischio backend e delle emergenze in un progetto complesso e cross-società", "Allineamento operativo cross-società"],
         },
         {
           group: "integration",
@@ -395,7 +395,7 @@ export const translations: Record<Lang, Translation> = {
           client: "Internal project (GCDS store)",
           desc: "Switch of the system integration backing the GCDS ecommerce store across group companies with different infrastructures: from SAP to NetSuite, new logical warehouse, new carrier codes and integration update. The Shopify storefront stayed in place — only the integration backend changed.",
           milestones: ["SAP → NetSuite data mapping", "Logical warehouse migration", "New carrier codes & integration update", "Post go-live hypercare"],
-          results: ["Shopify storefront preserved without interruptions", "Backend switch completed with no significant disruption", "Cross-company operational alignment"],
+          results: ["Shopify storefront preserved without interruptions", "Backend risk and emergency management on a complex cross-company project", "Cross-company operational alignment"],
         },
         {
           group: "integration",
