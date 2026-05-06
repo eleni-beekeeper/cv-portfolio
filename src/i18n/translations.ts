@@ -43,6 +43,7 @@ type Translation = {
   portfolio: {
     title: string; subtitle: string; note: string;
     clientLabel: string; milestonesLabel: string; resultsLabel: string;
+    clientsTitle: string; clients: string[];
     groupsTitle: string;
     groups: { id: string; label: string }[];
     projects: (PortfolioProject & { group: string })[];
