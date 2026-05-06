@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/i18n/LanguageContext";
-import { Info, CheckCircle2, Flag, ArrowRight } from "lucide-react";
+import { CheckCircle2, Flag, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -21,10 +21,6 @@ function Portfolio() {
         <p className="text-lg text-muted-foreground">{t.portfolio.subtitle}</p>
       </header>
 
-      <div className="bg-accent/60 border border-border/60 rounded-xl p-4 flex gap-3 items-start mb-12">
-        <Info className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-        <p className="text-sm text-accent-foreground">{t.portfolio.note}</p>
-      </div>
 
       <section className="mb-16 text-center border-y border-border/60 py-10">
         <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-5">{t.portfolio.clientsTitle}</p>
