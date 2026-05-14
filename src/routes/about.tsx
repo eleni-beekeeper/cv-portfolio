@@ -6,8 +6,13 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Elèni Kokologianni" },
-      { name: "description", content: "Hybrid digital professional bridging business and tech across ecommerce, project management and data." },
+      { title: "Chi sono — Eleni Kokologianni" },
+      { name: "description", content: "Eleni Kokologianni, professionista ibrida tra business e tech: project management, ecommerce, business consulting e data." },
+      { property: "og:title", content: "Chi sono — Eleni Kokologianni" },
+      { property: "og:url", content: "https://cvelenikokologianni.lovable.app/about" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://cvelenikokologianni.lovable.app/about" },
     ],
   }),
   component: About,
