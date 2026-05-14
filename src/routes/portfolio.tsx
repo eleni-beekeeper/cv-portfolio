@@ -5,8 +5,13 @@ import { CheckCircle2, Flag, ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Elèni Kokologianni" },
-      { name: "description", content: "Selected projects across ecommerce, project management and system integration with milestones and results." },
+      { title: "Portfolio — Eleni Kokologianni" },
+      { name: "description", content: "Progetti selezionati di Eleni Kokologianni in ecommerce, project management e system integration, con milestone e risultati." },
+      { property: "og:title", content: "Portfolio — Eleni Kokologianni" },
+      { property: "og:url", content: "https://cvelenikokologianni.lovable.app/portfolio" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://cvelenikokologianni.lovable.app/portfolio" },
     ],
   }),
   component: Portfolio,

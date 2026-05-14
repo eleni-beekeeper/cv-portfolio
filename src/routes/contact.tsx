@@ -5,8 +5,13 @@ import { Mail, Phone, MapPin, Download, Linkedin } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Elèni Kokologianni" },
-      { name: "description", content: "Get in touch with Elèni Kokologianni — open to PM, BA, ecommerce and SaaS consulting opportunities." },
+      { title: "Contatti — Eleni Kokologianni" },
+      { name: "description", content: "Contatta Eleni Kokologianni per opportunità di project management, business consulting, ecommerce e SaaS." },
+      { property: "og:title", content: "Contatti — Eleni Kokologianni" },
+      { property: "og:url", content: "https://cvelenikokologianni.lovable.app/contact" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://cvelenikokologianni.lovable.app/contact" },
     ],
   }),
   component: Contact,

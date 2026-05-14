@@ -41,6 +41,30 @@ export const Route = createRootRoute({
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/RvHDU3hi09aPEUk8ulQcCBurVfp2/social-images/social-1777975189668-immagine_profilo_eleni_def.png.webp" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Eleni Kokologianni",
+          alternateName: ["Elèni Kokologianni", "Eleni Kokologianni Lainà"],
+          url: "https://cvelenikokologianni.lovable.app",
+          jobTitle: "Project Manager & Business Consultant",
+          email: "mailto:elen.kokologianni@gmail.com",
+          telephone: "+39 393 0385 114",
+          sameAs: ["https://www.linkedin.com/in/eleni-kokologianni-29011989/"],
+          knowsAbout: [
+            "Project Management",
+            "Business Consulting",
+            "Ecommerce",
+            "Business Analysis",
+            "Data Analysis",
+            "System Integration",
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -49,7 +73,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="it">
       <head>
         <HeadContent />
       </head>

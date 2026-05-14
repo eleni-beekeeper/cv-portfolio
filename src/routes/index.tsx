@@ -6,8 +6,12 @@ import { ArrowRight, Download, Briefcase, BarChart3, ShoppingBag, Workflow } fro
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Elèni Kokologianni — Project Manager & Business Analyst" },
-      { name: "description", content: "Hybrid digital professional: project management, ecommerce, business analysis and data." },
+      { title: "Eleni Kokologianni — Project Manager & Business Consultant" },
+      { name: "description", content: "Sito personale di Eleni Kokologianni: Project Manager, Business Consultant, Ecommerce Specialist. Portfolio, esperienze e contatti." },
+      { property: "og:url", content: "https://cvelenikokologianni.lovable.app/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://cvelenikokologianni.lovable.app/" },
     ],
   }),
   component: Index,
