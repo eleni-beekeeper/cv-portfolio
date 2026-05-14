@@ -28,6 +28,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "jFnJst_P_ALXfP-uURms1H8R77cydZ8AHPr3ooVw7Ac" },
       { title: "Eleni Kokologianni — Project Manager & Business Consultant" },
       { name: "description", content: "Personal site & portfolio of Eleni Kokologianni — Project Manager, Business Consultant, Ecommerce Specialist." },
       { name: "author", content: "Elèni Kokologianni" },
