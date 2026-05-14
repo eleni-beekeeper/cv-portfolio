@@ -80,7 +80,7 @@ export const translations: Record<Lang, Translation> = {
       h4Desc: "Raccolta requisiti, mappatura processi, presales e integrazione sistemi (ERP, CRM, CMS).",
       ctaTitle: "Cerchi un profilo ibrido che parli sia tech che business?",
       ctaDesc: "Sono aperta a opportunità come Project Manager, Business Consultant, Ecommerce Specialist e SaaS Consultant.",
-      ctaBtn: "Mettiamoci in contatto",
+      ctaBtn: "Entriamo in contatto",
     },
     about: {
       title: "Chi sono",
