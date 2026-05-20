@@ -62,7 +62,7 @@ export const translations: Record<Lang, Translation> = {
   it: {
     nav: { home: "Home", about: "Chi sono", experience: "Esperienze", portfolio: "Portfolio", contact: "Contatti" },
     hero: {
-      eyebrow: "Project Manager · Business Consultant · Ecommerce",
+      eyebrow: "Project Manager · Business Consultant · Ecommerce Management",
       title: "Costruisco ponti tra business e tecnologia.",
       subtitle: "Coordino progetti digitali ed ecommerce data-driven, traducendo bisogni di business in soluzioni tecniche concrete. Profilo ibrido tra gestione, analisi dati e consulenza.",
       cta1: "Vedi i progetti",
@@ -115,7 +115,6 @@ export const translations: Record<Lang, Translation> = {
         { role: "Project Manager", company: "FiloBlu Spa", period: "01/2024 — Presente", bullets: ["Coordinamento progetti digital ed ecommerce con focus su performance e miglioramento continuo.", "Raccolta e analisi requisiti business, traduzione in soluzioni tecniche e attività di presales.", "Monitoraggio scope, tempi e budget fino al go-live e post-lancio.", "Unico punto di contatto per stakeholder tecnici e business, gestione change request.", "Redazione documentazione tecnica/funzionale e supervisione QA."] },
         { role: "E-commerce Specialist", company: "FiloBlu Spa", period: "01/2022 — 01/2024", bullets: ["Monitoraggio e analisi KPI ecommerce con Qlik Sense.", "Supporto al Piano Commerciale annuale e ai lanci di collezione.", "Merchandising online basato su insight di performance.", "Supply chain: analisi stock, ragionamenti su promo e scorte, riassortimenti per evitare out of stock.", "Gestione logistica e corrieri, verifica flussi ordini e tracking per il corretto funzionamento di ordini e spedizioni.", "Interfaccia con customer care e ottimizzazione widget chatbot.", "Collaborazione con fatturazione per emissione e trasmissione corretta dei documenti verso ERP e altri sistemi."] },
         { role: "Responsabile E-commerce B2B", company: "Z Group Srl", period: "04/2018 — 12/2021", bullets: ["Analisi performance del catalogo e campagne digital.", "Coordinamento agenzia web e software house.", "Gestione corrieri, spedizioni e fatturazione.", "Miglioramento qualità dati catalogo, riduzione reclami/resi."] },
-        { role: "Assistente Product Manager", company: "OVS Spa", period: "10/2017 — 01/2018", bullets: ["Coordinamento fornitori, monitoraggio tempi e qualità.", "Collaborazione con team interni e gestione processi."] },
       ],
       eduTitle: "Formazione & Certificazioni",
       edu: [
@@ -242,7 +241,7 @@ export const translations: Record<Lang, Translation> = {
   en: {
     nav: { home: "Home", about: "About", experience: "Experience", portfolio: "Portfolio", contact: "Contact" },
     hero: {
-      eyebrow: "Project Manager · Business Consultant · Ecommerce",
+      eyebrow: "Project Manager · Business Consultant · Ecommerce Management",
       title: "I build bridges between business and tech.",
       subtitle: "I lead data-driven digital and ecommerce projects, turning business needs into concrete technical solutions. A hybrid profile across delivery, analytics and consulting.",
       cta1: "View projects",
@@ -295,7 +294,6 @@ export const translations: Record<Lang, Translation> = {
         { role: "Project Manager", company: "FiloBlu Spa", period: "01/2024 — Present", bullets: ["Coordination of digital and ecommerce projects with focus on performance and continuous improvement.", "Business requirements gathering and translation into technical solutions, including presales activities.", "Scope, time and budget monitoring through go-live and post-launch.", "Single point of contact for tech and business stakeholders, change request management.", "Technical/functional documentation and QA supervision."] },
         { role: "E-commerce Specialist", company: "FiloBlu Spa", period: "01/2022 — 01/2024", bullets: ["Ecommerce KPI monitoring and analysis with Qlik Sense.", "Support to the annual Commercial Plan and collection launches.", "Online merchandising driven by performance insights.", "Supply chain: stock analysis, promo & inventory planning, replenishment to avoid out-of-stock.", "Logistics and carrier management, monitoring of order and tracking flows for correct order/shipping operations.", "Interface with customer care and chatbot widget optimization.", "Collaboration with billing for correct issuing and transmission of documents to ERP and other systems."] },
         { role: "B2B E-commerce Manager", company: "Z Group Srl", period: "04/2018 — 12/2021", bullets: ["Catalog and digital campaign performance analysis.", "Coordination of web agency and software house.", "Carrier, shipping and invoicing management.", "Catalog data quality improvement, reduction of complaints/returns."] },
-        { role: "Assistant Product Manager", company: "OVS Spa", period: "10/2017 — 01/2018", bullets: ["Supplier coordination, time and quality monitoring.", "Collaboration with internal teams and process management."] },
       ],
       eduTitle: "Education & Certifications",
       edu: [
